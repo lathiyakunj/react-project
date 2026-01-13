@@ -1,14 +1,12 @@
-import img from "../images/logo.svg";
 import { FaNotesMedical, FaShoppingBag, FaUserAlt } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { MdDiamond, MdMoveToInbox, MdOutlineSearch } from "react-icons/md";
-import { TbChartPieFilled } from "react-icons/tb";
+import { MdDiamond, MdMoveToInbox } from "react-icons/md";
 import { HiMiniRectangleStack, HiMiniSquares2X2 } from "react-icons/hi2";
 import { GoSignOut } from "react-icons/go";
 import { RiTerminalWindowFill } from "react-icons/ri";
 import { useContext, useEffect } from "react";
 import { loginUser } from "../App";
-import { IoHelpBuoy, IoStarOutline } from "react-icons/io5";
+import { IoHelpBuoy, IoTvOutline } from "react-icons/io5";
 const HOC = (Comp) => {
   const NewComponent = () => {
     let user = useContext(loginUser);
@@ -25,7 +23,7 @@ const HOC = (Comp) => {
     console.log(window.location);
     return (
       <>
-        <div className="w-full fix flex h-17 p-2 border-b border-gray-200">
+        {/* <div className="w-full fix flex h-17 p-2 border-b border-gray-200">
           <NavLink to="/home">
             <div className="flex py-2 pe-5 ps-4 w-65">
               <img src={img} alt="" className="h-6 mt-1 w-6 me-2 " />
@@ -69,7 +67,7 @@ const HOC = (Comp) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex">
           {/* SideBar */}
@@ -77,7 +75,7 @@ const HOC = (Comp) => {
             <ul className="pt-5 text-lg pb-4">
               <NavLink to="/dashboard">
                 <li className=" text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg  mt-0 flex items-center">
-                  <TbChartPieFilled className="inline  me-4 text-[20px]" />
+                  <IoTvOutline className="inline  me-4 text-[20px]" />
                   <span className="text-[#201827]">Dashboard</span>
                 </li>
               </NavLink>
