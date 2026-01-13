@@ -1,9 +1,13 @@
-import { FaNotesMedical, FaShoppingBag, FaUserAlt } from "react-icons/fa";
+import {
+  FaFingerprint,
+  FaMapMarkedAlt,
+  FaNotesMedical,
+  FaTable,
+  FaTools,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { MdDiamond, MdMoveToInbox } from "react-icons/md";
-import { HiMiniRectangleStack, HiMiniSquares2X2 } from "react-icons/hi2";
-import { GoSignOut } from "react-icons/go";
-import { RiTerminalWindowFill } from "react-icons/ri";
+import { MdDiamond } from "react-icons/md";
+import { HiMiniRectangleStack } from "react-icons/hi2";
 import { useContext, useEffect } from "react";
 import { loginUser } from "../App";
 import { IoHelpBuoy, IoTvOutline } from "react-icons/io5";
@@ -72,77 +76,69 @@ const HOC = (Comp) => {
         <div className="flex">
           {/* SideBar */}
           <div className="w-full max-w-63.75 h-[89.3vh] px-5 bg-white border-r border-gray-200">
-            <ul className="pt-5 text-lg pb-4">
+            <ul className="pt-4 text-lg pb-4 ps-2">
+              <h1 className="uppercase text-[14px] text-[#334155] py-4 pb-7 font-bold">
+                notus react
+              </h1>
+              <hr className="text-gray-200 my-3" />
+              <p className="text-[#334155] text-[12px] pt-2 pb-4 uppercase font-semibold">
+                Admin Layout Pages
+              </p>
               <NavLink to="/dashboard">
-                <li className=" text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg  mt-0 flex items-center">
-                  <IoTvOutline className="inline  me-4 text-[20px]" />
-                  <span className="text-[#201827]">Dashboard</span>
+                <li className=" text-[#6b7280 my-5 rounded-lg  mt-1">
+                  <IoTvOutline className="inline text-[#cbd5e1] me-4 text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    Dashboard
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/khanban">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg hover:text[] my-1.5 flex items-center">
-                  <HiMiniSquares2X2 className="inline me-4" />
-                  <span className="text-[#201827]">Khanban</span>
+              <NavLink to="/setting">
+                <li className="text-[#6b7280 my-5 rounded-lg hover:tems-center">
+                  <FaTools className="inline me-4 text-[#cbd5e1] text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    Settings
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/inbox">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg mt-0.5 hover:text[] flex items-center">
-                  <MdMoveToInbox className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">Inbox</span>
+              <NavLink to="/tables">
+                <li className="text-[#6b7280 my-5 rounded-lg mt-0.5 flex items-center">
+                  <FaTable className="inline me-3 text-[#cbd5e1] text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    Tables
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/user">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg hover:text[] my-1.5 flex items-center">
-                  <FaUserAlt className="inline me-4" />
-                  <span className="text-[#201827]">Users</span>
+              <NavLink to="/maps">
+                <li className="text-[#6b7280 my-5 rounded-lg hover:tems-center">
+                  <FaMapMarkedAlt className="inline text-[#cbd5e1] me-4 text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    Maps
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/products">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg mt-0.5 hover:text[] flex items-center">
-                  <FaShoppingBag className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">Products</span>
+              <hr className="text-gray-200 my-3" />
+              <p className="text-[#334155] text-[12px] pt-2 pb-4 uppercase font-semibold">
+                Auth Layout Pages
+              </p>
+              <NavLink to="/login">
+                <li className="text-[#6b7280 my-5 rounded-lg mt-0.5 flex items-center">
+                  <FaFingerprint className="inline text-[#cbd5e1] me-3 text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    Login
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/signin">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 rounded-lg mt-0.5 hover:text[] flex items-center">
-                  <GoSignOut className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">SignIn</span>
-                </li>
-              </NavLink>
-              <NavLink to="/signup">
-                <li className="text-[#6b7280] hover:bg-gray-100 hover:text-black p-2 mb-2 rounded-lg mt-0.5 hover:text[] flex items-center">
-                  <RiTerminalWindowFill className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">SignUp</span>
+              <NavLink to="/register">
+                <li className="text-[#6b7280] my-5 rounded-lg mt-1.5 flex items-center">
+                  <FaNotesMedical className="inline text-[#cbd5e1] me-3 text-[18px]" />
+                  <span className="text-[#334155] text-[12px] font-bold uppercase">
+                    register
+                  </span>
                 </li>
               </NavLink>
               <hr className="text-gray-200" />
-              <NavLink to="/upgradetopro">
-                <li className="text-[#6b7280] hover:bg-gray-100  hover:text-black p-2 rounded-lg mt-1.5 hover:text[] flex items-center">
-                  <MdDiamond className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">UpgradeToPro</span>
-                </li>
-              </NavLink>
-              <NavLink to="/documentation">
-                <li className="text-[#6b7280] hover:bg-gray-100  hover:text-black p-2 rounded-lg mt-1.5 hover:text[] flex items-center">
-                  <FaNotesMedical className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">Documentation</span>
-                </li>
-              </NavLink>
-              <NavLink to="/components">
-                <li className="text-[#6b7280] hover:bg-gray-100  hover:text-black p-2 rounded-lg mt-1.5 hover:text[] flex items-center">
-                  <HiMiniRectangleStack className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">Components</span>
-                </li>
-              </NavLink>
-              <NavLink to="/help">
-                <li className="text-[#6b7280] hover:bg-gray-100  hover:text-black p-2 rounded-lg mt-1.5 hover:text[] flex items-center">
-                  <IoHelpBuoy className="inline me-3 text-[22px]" />
-                  <span className="text-[#201827]">Help</span>
-                </li>
-              </NavLink>
             </ul>
           </div>
-
           <div className="">
             <Comp />
           </div>

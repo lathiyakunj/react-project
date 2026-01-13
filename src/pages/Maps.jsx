@@ -1,12 +1,12 @@
 import React from 'react'
 import HOC from './HOC'
 
-const User = () => {
+const Maps = () => {
   return (
     <>
-      User
+      Maps
     </>
   )
 }
 
-export default HOC(User)
+export default HOC(Maps)
