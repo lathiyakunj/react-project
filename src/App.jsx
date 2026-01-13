@@ -5,8 +5,6 @@ import Setting from "./pages/Setting";
 import Tables from "./pages/Tables";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import Components from "./pages/Components";
-import Help from "./pages/Help";
 import Login from "./pages/Login";
 import { useState } from "react";
 import { createContext } from "react";
