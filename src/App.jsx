@@ -10,6 +10,9 @@ import { useState } from "react";
 import { createContext } from "react";
 import Maps from "./pages/Maps";
 import Register from "./pages/Register";
+import LandingPage from "./pages/LandingPage";
+import ProfilePage from "./pages/ProfilePage";
+import HOC from "./pages/HOC";
 
 export const loginUser = createContext();
 function App() {
@@ -38,6 +41,8 @@ function App() {
                 <Route path="/maps" element={<Maps />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/landingpage" element={<LandingPage />} />
+                <Route path="/profilepage" element={<ProfilePage />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp />} />
               </>

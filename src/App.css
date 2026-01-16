@@ -1,1 +1,10 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+/* .active{
+    color: #0ea5ed !important;
+} */
+
+.active {
+  color: #0ea5ed !important;
+  background: #fff;
+}

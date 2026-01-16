@@ -1,16 +1,16 @@
 import {
   FaFingerprint,
   FaMapMarkedAlt,
+  FaNewspaper,
   FaNotesMedical,
   FaTable,
   FaTools,
+  FaUserCircle,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { MdDiamond } from "react-icons/md";
-import { HiMiniRectangleStack } from "react-icons/hi2";
 import { useContext, useEffect } from "react";
 import { loginUser } from "../App";
-import { IoHelpBuoy, IoTvOutline } from "react-icons/io5";
+import { IoTvOutline } from "react-icons/io5";
 const HOC = (Comp) => {
   const NewComponent = () => {
     let user = useContext(loginUser);
@@ -25,54 +25,17 @@ const HOC = (Comp) => {
       user.setdata(user.data);
     };
     console.log(window.location);
+    const navClass = ({ isActive }) =>
+      `my-4 flex 
+      ${
+        isActive
+          ? "text-[#0ea5ed] font-bold hover:text-[#0ea5ed]"
+          : "text-[#334155] hover:text-[#64748b]"
+      }`;
+    
+      
     return (
       <>
-        {/* <div className="w-full fix flex h-17 p-2 border-b border-gray-200">
-          <NavLink to="/home">
-            <div className="flex py-2 pe-5 ps-4 w-65">
-              <img src={img} alt="" className="h-6 mt-1 w-6 me-2 " />
-              <h3 className="font-bold text-[21px]">Windster</h3>
-            </div>
-          </NavLink>
-          <div className="w-full">
-            <div className=" flex justify-between  items-center text-[#6b7280]">
-              <label
-                htmlFor="input"
-                className="mt-2 px-3 py-1.5 w-63 ms-1 hover:outline-[#3798a6] bg-[#f9fafb] hover:outline-2 outline hover:cursor-text my-0.5 outline-gray-300 rounded-lg"
-              >
-                <MdOutlineSearch fontSize={22} className="inline-block me-2" />
-                <input
-                  id="input"
-                  type="text"
-                  className="focus:outline-0 placeholder:text-[#6b7280] text-[#222121]"
-                  placeholder="Search"
-                />
-              </label>
-
-              <div>
-                <span className=" font-normal text-gray-500  mr-5">
-                  Open source ❤️
-                </span>
-                <div className="border inline-flex mr-3 border-gray-400 bg-[#f0f4f7] text-black rounded">
-                  <div className="items-center px-3 py-1 flex text-[12px]">
-                    <IoStarOutline className=" text-[16px]" />
-                    <span className="ps-1"> Star</span>
-                  </div>
-                  <span className="bg-white py-1 text-[12px] border-l px-2.5  border-gray-400">
-                    6
-                  </span>
-                </div>
-                <button
-                  className="py-2 px-3 bg-teal-500 rounded text-white me-4"
-                  onClick={logOut}
-                >
-                  LogOut
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <div className="flex">
           {/* SideBar */}
           <div className="w-full max-w-63.75 h-[89.3vh] px-5 bg-white border-r border-gray-200">
@@ -84,69 +47,71 @@ const HOC = (Comp) => {
               <p className="text-[#64748b] text-[12px] pt-2 pb-4 uppercase font-bold">
                 Admin Layout Pages
               </p>
-              <NavLink to="/dashboard">
-                <li className=" text-[#334155] my-5 rounded-lg hover:text-[#64748b] mt-1">
-                  <IoTvOutline className="inline text-[#cbd5e1] me-4 text-[18px]" />
+              <NavLink className={navClass} to="/dashboard">
+                <li className="   -mt-4">
+                  <IoTvOutline className="inline me-4 text-[16px]" />
                   <span className=" text-[12px] font-bold uppercase">
                     Dashboard
                   </span>
                 </li>
               </NavLink>
-              <NavLink to="/setting">
-                <li className="text-[#6b7280 my-5 rounded-lg hover:tems-center">
-                  <FaTools className="inline me-4 text-[#cbd5e1] text-[18px]" />
+              <NavLink className={navClass} to="/setting">
+                <li className=" ">
+                  <FaTools className="inline me-4 text-[16px]" />
                   <span className=" text-[12px] font-bold uppercase">
                     Settings
                   </span>
                 </li>
               </NavLink>
-              <NavLink to="/tables">
-                <li className="text-[#6b7280 my-5 rounded-lg mt-0.5 flex items-center">
-                  <FaTable className="inline me-3 text-[#cbd5e1] text-[18px]" />
+              <NavLink className={navClass} to="/tables">
+                <li className="">
+                  <FaTable className="inline me-3 text-[16px]" />
                   <span className="text-[12px] font-bold uppercase">
                     Tables
                   </span>
                 </li>
               </NavLink>
-              <NavLink to="/maps">
-                <li className="text-[#6b7280 my-5 rounded-lg hover:tems-center">
-                  <FaMapMarkedAlt className="inline text-[#cbd5e1] me-4 text-[18px]" />
+              <NavLink className={navClass} to="/maps">
+                <li className=" ">
+                  <FaMapMarkedAlt className="inline me-4 text-[16px]" />
                   <span className="text-[12px] font-bold uppercase">Maps</span>
                 </li>
               </NavLink>
-              <hr className="text-gray-200 my-3" />
-              <p className="text-[#64748b] text-[12px] pt-2 pb-4 uppercase font-bold">
+              <hr className="text-gray-200 my-6" />
+              <p className="text-[#64748b] text-[12px]  uppercase font-bold">
                 Auth Layout Pages
               </p>
-              <NavLink to="/login">
-                <li className="text-[#6b7280 my-5 rounded-lg mt-0.5 flex items-center">
-                  <FaFingerprint className="inline text-[#cbd5e1] me-3 text-[18px]" />
+              <NavLink className={navClass} to="/login">
+                <li className="">
+                  <FaFingerprint className="inline me-3 text-[16px]" />
                   <span className="text-[12px] font-bold uppercase">Login</span>
                 </li>
               </NavLink>
-              <NavLink to="/register">
-                <li className="text-[#6b7280] my-5 rounded-lg mt-1.5 flex items-center">
-                  <FaNotesMedical className="inline text-[#cbd5e1] me-3 text-[18px]" />
+              <NavLink className={navClass} to="/register">
+                <li className="">
+                  <FaNotesMedical className="inline me-3 text-[16px]" />
                   <span className="text-[12px] font-bold uppercase">
                     register
                   </span>
                 </li>
               </NavLink>
-              <hr className="text-gray-200 my-3" />
-              <p className="text-[#64748b] text-[12px] pt-2 pb-4 uppercase font-bold">
-                documentation
+              <hr className="text-gray-200 mb-6 mt-11" />
+              <p className="text-[#64748b] text-[12px] uppercase font-bold">
+                no layout pages
               </p>
-              <NavLink to="/login">
-                <li className="text-[#6b7280 my-5 rounded-lg mt-0.5 flex items-center">
-                  <FaFingerprint className="inline text-[#cbd5e1] me-3 text-[18px]" />
-                  <span className="text-[12px] font-bold uppercase">Login</span>
+              <NavLink className={navClass} to="/landingpage">
+                <li className="">
+                  <FaNewspaper className="inline me-3 text-[16px]" />
+                  <span className="text-[12px] font-bold uppercase">
+                    Landing Page
+                  </span>
                 </li>
               </NavLink>
-              <NavLink to="/register">
-                <li className="text-[#6b7280] my-5 rounded-lg mt-1.5 flex items-center">
-                  <FaNotesMedical className="inline text-[#cbd5e1] me-3 text-[18px]" />
+              <NavLink className={navClass} to="/profilepage">
+                <li className="">
+                  <FaUserCircle className="inline me-3 text-[16px]" />
                   <span className="text-[12px] font-bold uppercase">
-                    register
+                    Profile Page
                   </span>
                 </li>
               </NavLink>
