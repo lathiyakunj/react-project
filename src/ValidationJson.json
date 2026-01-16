@@ -1,0 +1,59 @@
+[
+    {
+        "name": "name",
+        "conditions": [
+            {
+                "condition": "obj.name == undefined || obj.name == ''",
+                "error": "*FirstName is Mandatory"
+            },
+            {
+                "condition": "obj.name.length<3",
+                "error": "*Minimum 3 Character FirstName is Mandatory"
+            },
+            {
+                "condition": "!/^[a-zA-Z]+$/.test(obj.name)",
+                "error": "*Please Enter Character Only"
+            }
+        ]
+    },
+    {
+        "name": "email",
+        "conditions": [
+            {
+                "condition": "obj.email == undefined || obj.email == ''",
+                "error": "*Email is Mandatory"
+            },
+            {
+                "condition": "!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/.test(obj.email)",
+                "error": "*Please Enter Valid Email"
+            }
+        ]
+    },
+    {
+        "name": "password",
+        "conditions": [
+            {
+                "condition": "obj.password == undefined || obj.password == ''",
+                "error": "*Password is Mandatory"
+            },
+            {
+                "condition": "!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/.test(obj.password)",
+                "error": "*Please Enter Valid Password"
+            }
+        ]
+    },
+    {
+        "name": "cpassword",
+        "conditions": [
+            {
+                "condition": "obj.cpassword == undefined || obj.cpassword == ''",
+                "error": "*Age is Mandatory"
+            },
+            {
+                "condition": "obj.cpassword != obj.password",
+                "error": "*Both Password are not Match"
+            }
+        ]
+    }
+
+]

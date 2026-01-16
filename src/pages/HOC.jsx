@@ -13,17 +13,17 @@ import { loginUser } from "../App";
 import { IoTvOutline } from "react-icons/io5";
 const HOC = (Comp) => {
   const NewComponent = () => {
-    let user = useContext(loginUser);
+    // let user = useContext(loginUser);
 
-    useEffect(() => {
-      user.setdata(true);
-    }, []);
+    // useEffect(() => {
+    //   user.setdata(true);
+    // }, []);
 
-    const logOut = () => {
-      localStorage.removeItem("user");
-      user.data = false;
-      user.setdata(user.data);
-    };
+    // const logOut = () => {
+    //   localStorage.removeItem("user");
+    //   user.data = false;
+    //   user.setdata(user.data);
+    // };
     console.log(window.location);
     const navClass = ({ isActive }) =>
       `my-4 flex 
@@ -32,25 +32,26 @@ const HOC = (Comp) => {
           ? "text-[#0ea5ed] font-bold hover:text-[#0ea5ed]"
           : "text-[#334155] hover:text-[#64748b]"
       }`;
-    
-      
+
     return (
       <>
         <div className="flex">
           {/* SideBar */}
           <div className="w-full max-w-63.75 h-[89.3vh] px-5 bg-white border-r border-gray-200">
             <ul className="pt-4 text-lg pb-4 ps-2">
-              <h1 className="uppercase text-[14px] text-[#334155] py-4 pb-7 font-bold">
-                notus react
-              </h1>
+              <NavLink to="/dashboard">
+                <h1 className="uppercase text-[14px] text-[#334155] py-4 pb-7 font-bold">
+                  notus react
+                </h1>
+              </NavLink>
               <hr className="text-gray-200 my-3" />
               <p className="text-[#64748b] text-[12px] pt-2 pb-4 uppercase font-bold">
                 Admin Layout Pages
               </p>
               <NavLink className={navClass} to="/dashboard">
-                <li className="   -mt-4">
+                <li className=" -mt-4">
                   <IoTvOutline className="inline me-4 text-[16px]" />
-                  <span className=" text-[12px] font-bold uppercase">
+                  <span className="text-[12px] font-bold uppercase">
                     Dashboard
                   </span>
                 </li>
@@ -58,7 +59,7 @@ const HOC = (Comp) => {
               <NavLink className={navClass} to="/setting">
                 <li className=" ">
                   <FaTools className="inline me-4 text-[16px]" />
-                  <span className=" text-[12px] font-bold uppercase">
+                  <span className="text-[12px] font-bold uppercase">
                     Settings
                   </span>
                 </li>
@@ -78,7 +79,7 @@ const HOC = (Comp) => {
                 </li>
               </NavLink>
               <hr className="text-gray-200 my-6" />
-              <p className="text-[#64748b] text-[12px]  uppercase font-bold">
+              <p className="text-[#64748b] text-[12px] uppercase font-bold">
                 Auth Layout Pages
               </p>
               <NavLink className={navClass} to="/login">

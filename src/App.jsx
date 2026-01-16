@@ -17,17 +17,16 @@ import HOC from "./pages/HOC";
 export const loginUser = createContext();
 function App() {
   const [data, setdata] = useState(false);
-  let user = JSON.parse(localStorage.getItem("user"));
+  // let user = JSON.parse(localStorage.getItem("user"));
   // console.log(data);
   // console.log(user);
   return (
     <>
       <BrowserRouter>
         {/* <Dashboard /> */}
-        <loginUser.Provider value={{ data, setdata }}>
+        {/* <loginUser.Provider value={{ data, setdata }}>
           <Routes>
             {!data && !user ? (
-              // (console.log(data),
               <>
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<Navigate to="/login" />} />
@@ -50,7 +49,28 @@ function App() {
 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </loginUser.Provider>
+        </loginUser.Provider> */}
+
+          <Routes>
+            <>
+              {/* <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Navigate to="/login" />} /> */}
+              <Route path="/" element={<Navigate to="/dashboard" />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/login" element={<Login />} />              
+              <Route path="/setting" element={<Setting />} />
+              <Route path="/tables" element={<Tables />} />
+              <Route path="/maps" element={<Maps />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/landingpage" element={<LandingPage />} />
+              <Route path="/profilepage" element={<ProfilePage />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+            </>
+
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
       </BrowserRouter>
     </>
   );
