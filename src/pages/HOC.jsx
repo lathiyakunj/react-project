@@ -22,7 +22,7 @@ const HOC = (Comp) => {
     //   user.data = false;
     //   user.setdata(user.data);
     // };
-    console.log(window.location);
+    // console.log(window.location);
     const navClass = ({ isActive }) =>
       `my-4 flex 
       ${
