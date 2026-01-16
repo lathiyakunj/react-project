@@ -8,8 +8,6 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { loginUser } from "../App";
 import { IoTvOutline } from "react-icons/io5";
 const HOC = (Comp) => {
   const NewComponent = () => {

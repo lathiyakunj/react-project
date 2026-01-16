@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import validationJson from "../ValidationJson.json";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-const SignIn = () => {
+const ChangePassword = () => {
   const [obj, setobj] = useState({
-    email: "",
     password: "",
+    cpassword: "",
   });
   const [blankObj, setblankObj] = useState({});
   const [errorObj, seterrorObj] = useState({});
@@ -41,24 +41,25 @@ const SignIn = () => {
 
     if (Object.keys(errorObj).length == 0) {
       setobj({ ...blankObj });
-      navigate("/dashboard");
+      navigate("/login");
     }
   }
   return (
     <>
       <div className="signin bg-gray-800 h-screen w-full flex items-center justify-center">
-        <div className="bg-[#e2e8f0] w-[28%] p-8 rounded-lg shadow-xl">
+        <div className="bg-[#e2e8f0] w-[30%] p-8 rounded-lg shadow-xl">
           <h1 className="text-[14px] font-bold mb-6 text-center text-gray-500">
             Sign up with
           </h1>
 
-          {/* Social buttons */}
+          {/* Social buttons (UI only) */}
           <div className="flex gap-3 justify-center mt-1 mb-6">
             <button
               type="button"
               className="bg-white rounded py-2 px-4 hover:bg-gray-50 shadow hover:shadow-md transition-all duration-300"
             >
               <span className="font-medium">
+                {" "}
                 <FaGithub className="inline me-1 text-[20px]" />
                 GitHub
               </span>
@@ -82,25 +83,7 @@ const SignIn = () => {
             <div className="flex-1 h-px bg-gray-300"></div>
           </div>
 
-          {/* Form with Validation */}
           <form>
-            <label
-              htmlFor="email"
-              className="text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              onChange={inputChange}
-              value={obj.email ?? ""}
-              className="w-full border bg-white border-gray-300 shadow rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-            />
-            <p className="mb-3 text-sm text-red-500">{errorObj?.email}</p>
-
             <label
               htmlFor="password"
               className="text-sm font-medium text-gray-700"
@@ -117,42 +100,36 @@ const SignIn = () => {
               className="w-full border bg-white border-gray-300 shadow rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
             <p className="mb-3 text-sm text-red-500">{errorObj?.password}</p>
-            <div className="flex items-center gap-2 ms-1 mt-2 mb-7">
-              <input
-                type="checkbox"
-                name="check"
-                id="check"
-                onChange={inputChange}
-                // checked={obj.email ?? false}
-                className="h-5 w-5  border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
 
-              <label
-                htmlFor="check"
-                className="text-sm font-medium text-gray-700"
-              >
-                Remember me
-              </label>
-            </div>
+            <label
+              htmlFor="cpassword"
+              className="text-sm font-medium text-gray-700"
+            >
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              name="cpassword"
+              id="cpassword"
+              placeholder="Confirm Password"
+              onChange={inputChange}
+              value={obj.cpassword ?? ""}
+              className="w-full border bg-white border-gray-300 shadow rounded px-3 py-2 mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+            <p className="mb-4 text-sm text-red-500">{errorObj?.cpassword}</p>
 
             <button
               type="button"
               onClick={getdata}
-              className="w-full bg-gray-900 text-white py-2 uppercase rounded font-semibold hover:bg-gray-800 transition"
+              className="w-full bg-gray-900 text-white py-2 rounded font-semibold hover:bg-gray-800 transition"
             >
-              login
+              CHANGE PASSWORD
             </button>
           </form>
-
-          <div className="mt-3 flex justify-between text-gray-700">
-            <NavLink to={"/forgotpassword"}>Forgot Password?</NavLink>
-            {/* <p>Forgot Password?</p> */}
-            <NavLink to={"/signin"}>Create New Account?</NavLink>
-          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default SignIn;
+export default ChangePassword;

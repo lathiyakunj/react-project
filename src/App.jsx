@@ -4,7 +4,6 @@ import Dashboard from "./pages/Dashboard";
 import Setting from "./pages/Setting";
 import Tables from "./pages/Tables";
 import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import { useState } from "react";
 import { createContext } from "react";
@@ -12,7 +11,8 @@ import Maps from "./pages/Maps";
 import Register from "./pages/Register";
 import LandingPage from "./pages/LandingPage";
 import ProfilePage from "./pages/ProfilePage";
-import HOC from "./pages/HOC";
+import ForgotPassword from "./pages/ForgotPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 export const loginUser = createContext();
 function App() {
@@ -66,7 +66,8 @@ function App() {
               <Route path="/landingpage" element={<LandingPage />} />
               <Route path="/profilepage" element={<ProfilePage />} />
               <Route path="/signin" element={<SignIn />} />
-              <Route path="/signup" element={<SignUp />} />
+              <Route path="/forgotpassword" element={<ForgotPassword />} />
+              <Route path="/changepassword" element={<ChangePassword />} />
             </>
 
             <Route path="*" element={<Navigate to="/" />} />
