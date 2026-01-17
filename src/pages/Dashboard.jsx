@@ -1,72 +1,108 @@
 import HOC from "./HOC";
+import img from "../images/dashboard_profile.jpg";
+import { FaSearch } from "react-icons/fa";
 const Dashboard = () => {
   return (
     <>
-    
-      {/* Header */}
-      {/* <div className="w-full fix flex h-17 p-2 border-b border-gray-400">
-        <div className="flex py-2 pe-5 ps-4 w-80">
-          <img src={img} alt="" className="h-6 mt-1 w-6 me-2 " />
-          <h3 className="font-bold text-[21px]">Windster</h3>
-        </div>
-        <div className="w-full">
-          <div className=" flex justify-between items-center text-[#6b7280]">
-            <label
-              htmlFor="input"
-              className=" inline-block py-2 bg-[#f9fafb] border  hover:cursor-text my-0.5 border-gray-200 rounded-xl"
-            >
-              <MdOutlineSearch fontSize={22} className="inline-block me-3" />
-              <input
-                id="input"
-                type="text"
-                className="focus:outline-0 placeholder:text-[#6b7280] text-[#6b7280]"
-                placeholder="Search"
-              />
-            </label>
+      {/* Dashboard */}
 
-            <div>
-              <span className=" font-normal text-gray-500  mr-5">
-                Open source ❤️
-              </span>
-              <span>
-                <div className="border inline-flex border-gray-400 bg-[#f0f4f7] text-black rounded">
-                  <div className="items-center px-3 py-1 flex text-[12px]">
-                    <IoStarOutline className=" text-[16px]" />
-                    <span className="ps-1"> Star</span>
-                  </div>
-                  <span className="bg-white py-1 text-[12px] border-l px-2.5  border-gray-400">
-                    6
+      {/* Dashboard Desing */}
+      {/* <!-- Stats Section --> */}
+      <div className="bg-[#0284c7] px-15 ">
+        <div className="flex items-center justify-between py-4">
+          <h1 className="text-white font-semibold text-sm uppercase">
+            Dashboard
+          </h1>
+
+          <div className="flex gap-3 align-middle">
+            <div className="relative bg-white rounded h-11">
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
+              <input
+                type="text"
+                placeholder="Search here..."
+                className="ps-9 py-2 w-50 rounded-md text-sm outline-none"
+              />
+            </div>
+
+            <img src={img} className="w-12  h-12 rounded-full" />
+          </div>
+        </div>
+        <div className="pb-32 mt-12 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+              <div>
+                <p className="text-xs uppercase font-bold text-gray-400">
+                  Traffic
+                </p>
+                <p className="text-xl font-semibold text-gray-700">350,897</p>
+                <p className="text-sm mt-3 text-gray-400">
+                  <span className="text-green-500 mr-2">
+                    <i className="fas fa-arrow-up"></i> 3.48%
                   </span>
-                </div>
-              </span>
+                  Since last month
+                </p>
+              </div>
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500 text-white">
+                <i className="far fa-chart-bar"></i>
+              </div>
+            </div>
+
+            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+              <div>
+                <p className="text-xs uppercase font-bold text-gray-400">
+                  New Users
+                </p>
+                <p className="text-xl font-semibold text-gray-700">2,356</p>
+                <p className="text-sm mt-3 text-gray-400">
+                  <span className="text-red-500 mr-2">
+                    <i className="fas fa-arrow-down"></i> 3.48%
+                  </span>
+                  Since last week
+                </p>
+              </div>
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 text-white">
+                <i className="fas fa-chart-pie"></i>
+              </div>
+            </div>
+
+            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+              <div>
+                <p className="text-xs uppercase font-bold text-gray-400">
+                  Sales
+                </p>
+                <p className="text-xl font-semibold text-gray-700">924</p>
+                <p className="text-sm mt-3 text-gray-400">
+                  <span className="text-orange-500 mr-2">
+                    <i className="fas fa-arrow-down"></i> 1.10%
+                  </span>
+                  Since yesterday
+                </p>
+              </div>
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-500 text-white">
+                <i className="fas fa-users"></i>
+              </div>
+            </div>
+
+            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+              <div>
+                <p className="text-xs uppercase font-bold text-gray-400">
+                  Performance
+                </p>
+                <p className="text-xl font-semibold text-gray-700">49.65%</p>
+                <p className="text-sm mt-3 text-gray-400">
+                  <span className="text-green-500 mr-2">
+                    <i className="fas fa-arrow-up"></i> 12%
+                  </span>
+                  Since last month
+                </p>
+              </div>
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-sky-500 text-white">
+                <i className="fas fa-percent"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div> */}
-
-      {/* <div className="w-63.75 h-[89.2vh] px-5 bg-white border-r border-gray-400">
-        <ul className="pt-5 text-lg pb-4">
-          <NavLink to="/home">
-            <li className="text-[#201827] my-4  mt-0 flex items-center">
-              <RiHome4Fill className="inline text-[#6b7280] me-4 text-[20px]" />
-              Home
-            </li>
-          </NavLink>
-          <NavLink to="/about">
-            <li className="text-[#201827]  my-4 flex items-center">
-              <FaUserAlt className="inline me-4 text-[#6b7280]" />
-              About
-            </li>
-          </NavLink>
-          <NavLink to="/contact">
-            <li className="text-[#201827]  flex items-center">
-              <BiSolidPhoneCall className="inline me-3 text-[#6b7280] text-[22px]" />
-              Contact
-            </li>
-          </NavLink>
-        </ul>
-      </div> */}
-      Dashboard
+      </div>
     </>
   );
 };
