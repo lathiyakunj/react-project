@@ -1,14 +1,20 @@
 import HOC from "./HOC";
 import img from "../images/dashboard_profile.jpg";
-import { FaSearch } from "react-icons/fa";
+import {
+  FaArrowDown,
+  FaArrowUp,
+  FaChartBar,
+  FaChartPie,
+  FaPercent,
+  FaSearch,
+} from "react-icons/fa";
+import { IoIosPeople } from "react-icons/io";
 const Dashboard = () => {
   return (
     <>
-      {/* Dashboard */}
-
       {/* Dashboard Desing */}
       {/* <!-- Stats Section --> */}
-      <div className="bg-[#0284c7] px-15 ">
+      <div className="bg-[#0284c7] px-14 w-274">
         <div className="flex items-center justify-between py-4">
           <h1 className="text-white font-semibold text-sm uppercase">
             Dashboard
@@ -29,75 +35,75 @@ const Dashboard = () => {
         </div>
         <div className="pb-32 mt-12 ">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+            <div className="bg-white rounded relative  shadow-md p-4 ">
               <div>
                 <p className="text-xs uppercase font-bold text-gray-400">
                   Traffic
                 </p>
                 <p className="text-xl font-semibold text-gray-700">350,897</p>
-                <p className="text-sm mt-3 text-gray-400">
+                <p className="text-sm mt-5 text-gray-400">
                   <span className="text-green-500 mr-2">
-                    <i className="fas fa-arrow-up"></i> 3.48%
+                    <FaArrowUp className="inline" /> 3.48%
                   </span>
                   Since last month
                 </p>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500 text-white">
-                <i className="far fa-chart-bar"></i>
+              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#ef4444] text-white">
+                <FaChartBar className="inline-block" />
               </div>
             </div>
 
-            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+            <div className="bg-white rounded relative  shadow-md p-4 ">
               <div>
                 <p className="text-xs uppercase font-bold text-gray-400">
-                  New Users
+                  NEW USERS
                 </p>
                 <p className="text-xl font-semibold text-gray-700">2,356</p>
-                <p className="text-sm mt-3 text-gray-400">
+                <p className="text-sm mt-5 text-gray-400">
                   <span className="text-red-500 mr-2">
-                    <i className="fas fa-arrow-down"></i> 3.48%
+                    <FaArrowDown className="inline" /> 3.48%
                   </span>
                   Since last week
                 </p>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 text-white">
-                <i className="fas fa-chart-pie"></i>
+              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#f97316] text-white">
+                <FaChartPie className="inline-block text-lg" />
               </div>
             </div>
 
-            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+            <div className="bg-white rounded relative  shadow-md p-4 ">
               <div>
                 <p className="text-xs uppercase font-bold text-gray-400">
-                  Sales
+                  sales
                 </p>
                 <p className="text-xl font-semibold text-gray-700">924</p>
-                <p className="text-sm mt-3 text-gray-400">
-                  <span className="text-orange-500 mr-2">
-                    <i className="fas fa-arrow-down"></i> 1.10%
+                <p className="text-sm mt-5 text-gray-400">
+                  <span className="text-[#f97316] mr-2">
+                    <FaArrowDown className="inline" /> 1.10%
                   </span>
                   Since yesterday
                 </p>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-pink-500 text-white">
-                <i className="fas fa-users"></i>
+              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#ec4899] text-white">
+                <IoIosPeople className="inline-block text-2xl" />
               </div>
             </div>
 
-            <div className="bg-white rounded shadow-md p-5 flex justify-between items-start">
+            <div className="bg-white rounded relative  shadow-md p-4 ">
               <div>
                 <p className="text-xs uppercase font-bold text-gray-400">
-                  Performance
+                  PERFORMANCE
                 </p>
-                <p className="text-xl font-semibold text-gray-700">49.65%</p>
-                <p className="text-sm mt-3 text-gray-400">
+                <p className="text-xl font-semibold text-gray-700">49,65%</p>
+                <p className="text-sm mt-5 text-gray-400">
                   <span className="text-green-500 mr-2">
-                    <i className="fas fa-arrow-up"></i> 12%
+                    <FaArrowUp className="inline" /> 12%
                   </span>
                   Since last month
                 </p>
               </div>
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-sky-500 text-white">
-                <i className="fas fa-percent"></i>
+              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#0ea5e9] text-white">
+                <FaPercent className="inline-block" />
               </div>
             </div>
           </div>
