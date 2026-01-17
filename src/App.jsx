@@ -55,7 +55,8 @@ function App() {
             <>
               {/* <Route path="/login" element={<Login />} />
               <Route path="/" element={<Navigate to="/login" />} /> */}
-              <Route path="/" element={<Navigate to="/dashboard" />} />
+              {/* <Route path="/" element={<Navigate to="/dashboard" />} /> */}
+              <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/login" element={<Login />} />              
               <Route path="/setting" element={<Setting />} />
@@ -70,7 +71,7 @@ function App() {
               <Route path="/changepassword" element={<ChangePassword />} />
             </>
 
-            <Route path="*" element={<Navigate to="/" />} />
+            {/* <Route path="*" element={<Navigate to="/" />} /> */}
           </Routes>
       </BrowserRouter>
     </>

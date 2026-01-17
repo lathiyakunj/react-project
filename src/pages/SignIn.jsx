@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import validationJson from "../ValidationJson.json";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import Swal from "sweetalert2";
 const SignIn = () => {
   const [obj, setobj] = useState({
     name: "",
@@ -25,7 +26,7 @@ const SignIn = () => {
   function checkValidation(name) {
     let validationObj = validationJson.find((values) => values.name == name);
     let validObj = validationObj?.conditions.find((value) =>
-      eval(value.condition)
+      eval(value.condition),
     );
 
     if (validObj) {
@@ -43,6 +44,18 @@ const SignIn = () => {
 
     if (Object.keys(errorObj).length == 0) {
       setobj({ ...blankObj });
+      Swal.fire({
+        position: "top-end",
+        toast: true,
+        icon: "success",
+        title: "User Created Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+        height: 10,
+        customClass: {
+          popup: "mini-toast",
+        },
+      });
       navigate("/login");
     }
   }
@@ -109,7 +122,7 @@ const SignIn = () => {
           </form>
         </div>
       </div> */}
-      
+
       <div className="signin bg-gray-800 h-screen w-full flex items-center justify-center">
         <div className="bg-[#e2e8f0] w-[45%] p-8 rounded-lg shadow-xl">
           <h1 className="text-[14px] font-bold mb-6 text-center text-gray-500">

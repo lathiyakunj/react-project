@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import validationJson from "../ValidationJson.json";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import Swal from "sweetalert2";
 const SignIn = () => {
   const [obj, setobj] = useState({
     email: "",
@@ -23,7 +24,7 @@ const SignIn = () => {
   function checkValidation(name) {
     let validationObj = validationJson.find((values) => values.name == name);
     let validObj = validationObj?.conditions.find((value) =>
-      eval(value.condition)
+      eval(value.condition),
     );
 
     if (validObj) {
@@ -41,6 +42,18 @@ const SignIn = () => {
 
     if (Object.keys(errorObj).length == 0) {
       setobj({ ...blankObj });
+      Swal.fire({
+        position: "top-end",
+        toast: true,
+        icon: "success",
+        title: "User Login Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+        height: 10,
+        customClass: {
+          popup: "mini-toast",
+        },
+      });
       navigate("/dashboard");
     }
   }

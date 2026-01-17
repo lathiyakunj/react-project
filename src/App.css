@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* .active{
     color: #0ea5ed !important;
@@ -9,10 +9,7 @@
   background: #fff;
 }
 
-.signin{
-    background-image: url("/src/images/loginbg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    /* height: auto; */
-    background-size: cover;
+.swal2-toast {
+  padding: 10px !important;
+  width: auto !important;
 }
