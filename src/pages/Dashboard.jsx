@@ -9,11 +9,101 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(CategoryScale, LinearScale, LineElement, Tooltip, Legend);
+
 const Dashboard = () => {
+  const data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "2026",
+        data: [65, 78, 66, 44, 56, 67, 75],
+        borderColor: "#4f5bd5",
+        backgroundColor: "rgba(79,91,213,0.1)",
+        pointBackgroundColor: "#4f5bd5",
+        pointBorderColor: "#4f5bd5",
+        pointRadius: 4,
+        borderWidth: 3,
+        tension: 0.4,
+        fill: false,
+      },
+      {
+        label: "2025",
+        data: [40, 68, 86, 74, 55, 60, 88],
+        borderColor: "#ffffff",
+        backgroundColor: "rgba(255,255,255,0.1)",
+        pointBackgroundColor: "#ffffff",
+        pointBorderColor: "#ffffff",
+        pointRadius: 4,
+        borderWidth: 3,
+        tension: 0.4,
+        fill: false,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
+        labels: {
+          color: "#ffffff",
+          boxWidth: 30,
+        },
+      },
+      tooltip: {
+        backgroundColor: "#111827",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        intersect: false,
+        mode: "index",
+      },
+    },
+
+    scales: {
+      y: {
+        min: 40,
+        max: 90,
+        ticks: {
+          color: "#cbd5e1",
+          stepSize: 5,
+        },
+        grid: {
+          color: "rgba(255,255,255,0.1)",
+          borderDash: [5, 5],
+          drawBorder: false,
+        },
+      },
+      x: {
+        ticks: {
+          color: "#cbd5e1",
+        },
+        grid: {
+          display: false,
+        },
+      },
+    },
+  };
   return (
     <>
       {/* Dashboard Desing */}
       {/* <!-- Stats Section --> */}
+      {/* Top Part */}
       <div className="bg-[#0284c7] px-14 w-274">
         <div className="flex items-center justify-between py-4">
           <h1 className="text-white font-semibold text-sm uppercase">
@@ -109,6 +199,27 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Bottom chart part */}
+      {/* Left chart */}
+        <div className="w-full xl:w-8/12 px-4 mb-12">
+          <div className="relative flex flex-col min-w-0 wrap-break-word w-full shadow-lg rounded bg-slate-700">
+            {/* Header */}
+            <div className="rounded-t mb-0 px-4 py-3 bg-transparent">
+              <h6 className="uppercase text-slate-200 mb-1 text-xs font-semibold">
+                Overview
+              </h6>
+              <h2 className="text-white text-xl font-semibold">Sales value</h2>
+            </div>
+
+            {/* Chart */}
+            <div className="p-4 flex-auto">
+              <div className="relative h-87.5">
+                <Line data={data} options={options} />
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 };
