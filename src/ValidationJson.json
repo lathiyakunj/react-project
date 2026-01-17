@@ -11,7 +11,7 @@
                 "error": "*Minimum 3 Character FirstName is Mandatory"
             },
             {
-                "condition": "!/^[a-zA-Z]+$/.test(obj.name)",
+                "condition": "/^[a-zA-Z]+$/.test(obj.name)",
                 "error": "*Please Enter Character Only"
             }
         ]
