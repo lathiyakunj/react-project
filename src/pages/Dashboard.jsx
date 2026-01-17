@@ -21,12 +21,12 @@ const Dashboard = () => {
           </h1>
 
           <div className="flex gap-3 align-middle">
-            <div className="relative bg-white rounded h-11">
+            <div className="relative bg-white rounded mt-0.5 h-11">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
               <input
                 type="text"
                 placeholder="Search here..."
-                className="ps-9 py-2 w-50 rounded-md text-sm outline-none"
+                className="ps-9 py-2 w-53 mt-1 rounded-md text-sm outline-none"
               />
             </div>
 
