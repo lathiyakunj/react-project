@@ -1,13 +1,6 @@
 import HOC from "./HOC";
 import img from "../images/dashboard_profile.jpg";
-import {
-  FaArrowDown,
-  FaArrowUp,
-  FaChartBar,
-  FaChartPie,
-  FaPercent,
-  FaSearch,
-} from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 // import { IoIosPeople } from "react-icons/io";
 
 import { Line } from "react-chartjs-2";
@@ -23,7 +16,7 @@ import {
   Legend,
 } from "chart.js";
 
-/* ✅ REGISTER CHART.JS ONCE (REQUIRED) */
+/* ✅ REGISTER CHART.JS ONCE */
 ChartJS.register(
   LineController,
   LineElement,
