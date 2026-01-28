@@ -226,7 +226,7 @@ const Dashboard = () => {
             <div className="relative flex flex-col min-w-0 bg-white w-full mb-6 shadow-lg rounded">
               <div className="px-4 py-3">
                 <h6 className="uppercase mb-1 text-xs font-semibold primeColor">Performance</h6>
-                <h2 className="text-gray-200 text-xl font-medium">Total Orders</h2>
+                <h2 className="text-gray-700 text-xl font-medium">Total Orders</h2>
               </div>
               <div className="p-4 flex-auto">
                 <div className="relative h-87.5">
