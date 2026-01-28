@@ -111,7 +111,6 @@ const Dashboard = () => {
 
   return (
     <>
-    
       {/* TOP SECTION */}
       <div className="bg-[#0284c7] px-14 w-274">
         <div className="flex items-center justify-between py-4">
@@ -206,7 +205,7 @@ const Dashboard = () => {
 
       {/* CHART SECTION */}
       <div className="relative w-full">
-        <div className="absolute w-full border -top-24 px-10 pb-20">
+        <div className="absolute w-full -top-24 px-10 pb-20">
           {/* Chart Div */}
           <div className="w-full  flex flex-col xl:flex-row">
             {/* Left Chart - Sales Line Chart */}
