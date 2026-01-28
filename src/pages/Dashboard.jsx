@@ -317,10 +317,10 @@ const Dashboard = () => {
               <table className="min-w-full text-sm text-left">
                 <thead className="bg-gray-100 text-gray-500 uppercase text-xs">
                   <tr>
-                    <th className="px-4 py-2">Page Name</th>
-                    <th className="px-4 py-2">Visitors</th>
-                    <th className="px-4 py-2">Unique Users</th>
-                    <th className="px-4 py-2">Bounce Rate</th>
+                    <th className="px-4 py-3">Page Name</th>
+                    <th className="px-4 py-3">Visitors</th>
+                    <th className="px-4 py-3">Unique Users</th>
+                    <th className="px-4 py-3">Bounce Rate</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -331,6 +331,7 @@ const Dashboard = () => {
                       unique: "340",
                       bounce: "46,53%",
                       trend: "up",
+                      color: "text-green-500"
                     },
                     {
                       page: "/argon/index.html",
@@ -338,6 +339,7 @@ const Dashboard = () => {
                       unique: "319",
                       bounce: "46,53%",
                       trend: "down",
+                      color: "text-orange-500"
                     },
                     {
                       page: "/argon/charts.html",
@@ -345,6 +347,7 @@ const Dashboard = () => {
                       unique: "294",
                       bounce: "36,49%",
                       trend: "down",
+                      color: "text-orange-500"
                     },
                     {
                       page: "/argon/tables.html",
@@ -352,6 +355,7 @@ const Dashboard = () => {
                       unique: "147",
                       bounce: "50,87%",
                       trend: "up",
+                      color: "text-green-500"
                     },
                     {
                       page: "/argon/profile.html",
@@ -359,19 +363,21 @@ const Dashboard = () => {
                       unique: "190",
                       bounce: "46,53%",
                       trend: "down",
+                      color: "text-red-500"
                     },
                   ].map((row, idx) => (
                     <tr key={idx} className="hover:bg-gray-50">
-                      <td className="px-4 py-2 text-[gray-700]">{row.page}</td>
-                      <td className="px-4 py-2 text-gray-700">
+                      <td className="px-4 py-3 text-gray-700 font-medium">{row.page}</td>
+                      <td className="px-4 py-3 text-gray-700">
                         {row.visitors}
                       </td>
-                      <td className="px-4 py-2 text-gray-700">{row.unique}</td>
-                      <td className="px-4 py-2 text-gray-700 flex items-center gap-1">
+                      <td className="px-4 py-3 text-gray-700">{row.unique}</td>
+                      <td className="px-4 py-3 text-gray-700 flex items-center gap-1">
                         {row.trend === "up" ? (
-                          <FaArrowUp className="text-green-500 inline" />
+                          // <FaArrowUp className="text-green-500 inline" />
+                          <FaArrowUp className={`${row.color} inline`} />
                         ) : (
-                          <FaArrowDown className="text-red-500 inline" />
+                          <FaArrowDown className={`${row.color} inline`}/>
                         )}
                         {row.bounce}
                       </td>
@@ -394,9 +400,9 @@ const Dashboard = () => {
               <table className="min-w-full text-sm text-left">
                 <thead className="bg-gray-100 text-gray-500 uppercase text-xs">
                   <tr>
-                    <th className="px-4 py-2">Referral</th>
-                    <th className="px-4 py-2">Visitors</th>
-                    <th className="px-4 py-2">Percentage</th>
+                    <th className="px-4 py-3">Referral</th>
+                    <th className="px-4 py-3">Visitors</th>
+                    <th className="px-4 py-3">Percentage</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -406,41 +412,46 @@ const Dashboard = () => {
                       visitors: "1,480",
                       percent: 60,
                       color: "bg-red-500",
+                      bcolor: "bg-red-500/30",
                     },
                     {
                       referral: "Facebook",
                       visitors: "5,480",
                       percent: 70,
                       color: "bg-green-500",
+                      bcolor: "bg-green-500/30",
                     },
                     {
                       referral: "Google",
                       visitors: "4,807",
                       percent: 80,
                       color: "bg-purple-500",
+                      bcolor: "bg-purple-500/30",
                     },
                     {
                       referral: "Instagram",
                       visitors: "3,678",
                       percent: 75,
                       color: "bg-blue-400",
+                      bcolor: "bg-blue-400/30",
                     },
                     {
                       referral: "Twitter",
                       visitors: "2,645",
                       percent: 30,
                       color: "bg-amber-300",
+                      bcolor: "bg-amber-300/30",
                     },
                   ].map((row, idx) => (
                     <tr key={idx} className=" hover:bg-gray-50">
-                      <td className="px-4 py-2 text-gray-700">
+                      <td className="px-4 py-3 text-gray-700 font-medium">
                         {row.referral}
                       </td>
-                      <td className="px-4 py-2 text-gray-700">
+                      <td className="px-4 py-3 text-gray-700">
                         {row.visitors}
                       </td>
-                      <td className="px-4 py-2">
-                        <div className="bg-gray-200 rounded-full h-2 w-full">
+                      <td className="px-4 py-3">
+                        <div className={`${row.bcolor} rounded-full h-2 w-full`}>
                           <div
                             className={`${row.color} h-2 rounded-full`}
                             style={{ width: `${row.percent}%` }}

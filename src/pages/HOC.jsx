@@ -35,7 +35,7 @@ const HOC = (Comp) => {
       <>
         <div className="flex">
           {/* SideBar */}
-          <div className="w-full max-w-63.75 h-[89.3vh] px-5 bg-white border-r border-gray-200">
+          <div className="overflow-auto w-full max-w-63.75 h-[99.99vh] px-5 bg-white border-r border-gray-200 fixed">
             <ul className="pt-4 text-lg pb-4 ps-2">
               <NavLink to="/dashboard">
                 <h1 className="uppercase text-[14px] text-[#334155] py-4 pb-7 font-bold">
@@ -117,7 +117,7 @@ const HOC = (Comp) => {
               <hr className="text-gray-200" />
             </ul>
           </div>
-          <div className="">
+          <div className="ms-63.75">
             <Comp />
           </div>
         </div>
