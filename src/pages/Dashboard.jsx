@@ -8,19 +8,31 @@ import {
   FaPercent,
   FaSearch,
 } from "react-icons/fa";
-import { IoIosPeople } from "react-icons/io";
+// import { IoIosPeople } from "react-icons/io";
+
 import { Line } from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
+  LineController,
   LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
   Tooltip,
   Legend,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, LineElement, Tooltip, Legend);
+/* ✅ REGISTER CHART.JS ONCE (REQUIRED) */
+ChartJS.register(
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Tooltip,
+  Legend
+);
 
 const Dashboard = () => {
   const data = {
@@ -56,7 +68,6 @@ const Dashboard = () => {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-
     plugins: {
       legend: {
         display: true,
@@ -74,7 +85,6 @@ const Dashboard = () => {
         mode: "index",
       },
     },
-
     scales: {
       y: {
         min: 40,
@@ -99,11 +109,10 @@ const Dashboard = () => {
       },
     },
   };
+
   return (
     <>
-      {/* Dashboard Desing */}
-      {/* <!-- Stats Section --> */}
-      {/* Top Part */}
+      {/* Dashboard Top */}
       <div className="bg-[#0284c7] px-14 w-274">
         <div className="flex items-center justify-between py-4">
           <h1 className="text-white font-semibold text-sm uppercase">
@@ -120,106 +129,30 @@ const Dashboard = () => {
               />
             </div>
 
-            <img src={img} className="w-12  h-12 rounded-full" />
-          </div>
-        </div>
-        <div className="pb-32 mt-12 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            <div className="bg-white rounded relative  shadow-md p-4 ">
-              <div>
-                <p className="text-xs uppercase font-bold text-gray-400">
-                  Traffic
-                </p>
-                <p className="text-xl font-semibold text-gray-700">350,897</p>
-                <p className="text-sm mt-5 text-gray-400">
-                  <span className="text-green-500 mr-2">
-                    <FaArrowUp className="inline" /> 3.48%
-                  </span>
-                  Since last month
-                </p>
-              </div>
-              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#ef4444] text-white">
-                <FaChartBar className="inline-block" />
-              </div>
-            </div>
-
-            <div className="bg-white rounded relative  shadow-md p-4 ">
-              <div>
-                <p className="text-xs uppercase font-bold text-gray-400">
-                  NEW USERS
-                </p>
-                <p className="text-xl font-semibold text-gray-700">2,356</p>
-                <p className="text-sm mt-5 text-gray-400">
-                  <span className="text-red-500 mr-2">
-                    <FaArrowDown className="inline" /> 3.48%
-                  </span>
-                  Since last week
-                </p>
-              </div>
-              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#f97316] text-white">
-                <FaChartPie className="inline-block text-lg" />
-              </div>
-            </div>
-
-            <div className="bg-white rounded relative  shadow-md p-4 ">
-              <div>
-                <p className="text-xs uppercase font-bold text-gray-400">
-                  sales
-                </p>
-                <p className="text-xl font-semibold text-gray-700">924</p>
-                <p className="text-sm mt-5 text-gray-400">
-                  <span className="text-[#f97316] mr-2">
-                    <FaArrowDown className="inline" /> 1.10%
-                  </span>
-                  Since yesterday
-                </p>
-              </div>
-              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#ec4899] text-white">
-                <IoIosPeople className="inline-block text-2xl" />
-              </div>
-            </div>
-
-            <div className="bg-white rounded relative  shadow-md p-4 ">
-              <div>
-                <p className="text-xs uppercase font-bold text-gray-400">
-                  PERFORMANCE
-                </p>
-                <p className="text-xl font-semibold text-gray-700">49,65%</p>
-                <p className="text-sm mt-5 text-gray-400">
-                  <span className="text-green-500 mr-2">
-                    <FaArrowUp className="inline" /> 12%
-                  </span>
-                  Since last month
-                </p>
-              </div>
-              <div className="w-12 h-12 absolute top-4 right-4 flex items-center justify-center rounded-full bg-[#0ea5e9] text-white">
-                <FaPercent className="inline-block" />
-              </div>
-            </div>
+            <img src={img} className="w-12 h-12 rounded-full" />
           </div>
         </div>
       </div>
 
-      {/* Bottom chart part */}
-      {/* Left chart */}
-        <div className="w-full xl:w-8/12 px-4 mb-12">
-          <div className="relative flex flex-col min-w-0 wrap-break-word w-full shadow-lg rounded bg-slate-700">
-            {/* Header */}
-            <div className="rounded-t mb-0 px-4 py-3 bg-transparent">
-              <h6 className="uppercase text-slate-200 mb-1 text-xs font-semibold">
-                Overview
-              </h6>
-              <h2 className="text-white text-xl font-semibold">Sales value</h2>
-            </div>
+      {/* Chart Section */}
+      <div className="w-full xl:w-8/12 px-4 mb-12">
+        <div className="relative flex flex-col min-w-0 w-full shadow-lg rounded bg-slate-700">
+          <div className="rounded-t px-4 py-3">
+            <h6 className="uppercase text-slate-200 text-xs font-semibold">
+              Overview
+            </h6>
+            <h2 className="text-white text-xl font-semibold">
+              Sales value
+            </h2>
+          </div>
 
-            {/* Chart */}
-            <div className="p-4 flex-auto">
-              <div className="relative h-87.5">
-                <Line data={data} options={options} />
-              </div>
+          <div className="p-4 flex-auto">
+            <div className="relative h-87.5">
+              <Line data={data} options={options} />
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };
