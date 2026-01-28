@@ -9,16 +9,16 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
-  BarElement,
   Tooltip,
   Legend,
+  BarElement,
 } from "chart.js";
 
 /* ✅ REGISTER EVERYTHING YOU USE */
@@ -33,7 +33,6 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  // Line Chart Data
   const data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -44,7 +43,7 @@ const Dashboard = () => {
         backgroundColor: "rgba(79,91,213,0.1)",
         pointBackgroundColor: "#4f5bd5",
         pointBorderColor: "#4f5bd5",
-        pointRadius: 2,
+        pointRadius: 4,
         borderWidth: 3,
         tension: 0.4,
         fill: false,
@@ -56,7 +55,7 @@ const Dashboard = () => {
         backgroundColor: "rgba(255,255,255,0.1)",
         pointBackgroundColor: "#ffffff",
         pointBorderColor: "#ffffff",
-        pointRadius: 2,
+        pointRadius: 4,
         borderWidth: 3,
         tension: 0.4,
         fill: false,
@@ -108,6 +107,8 @@ const Dashboard = () => {
       },
     },
   };
+
+  
 
   return (
     <>
@@ -205,76 +206,22 @@ const Dashboard = () => {
 
       {/* CHART SECTION */}
       <div className="relative w-full">
-        <div className="absolute w-full border -top-25 px-10 flex flex-col xl:flex-row">
-          {/* Left Chart - Sales Line Chart */}
-          <div className=" xl:w-12/12 px-4">
-            <div className="relative flex flex-col min-w-0 bg-slate-700 w-full mb-6 shadow-lg rounded">
+        <div className="absolute w-full -top-25 mx-10">
+          {/* Left Chart */}
+          <div className="w-full xl:w-6/10 px-4 mb- 12">
+            <div className="relative flex flex-col min-w-0 wrap-break-word w-full shadow-lg rounded bg-slate-700">
               <div className="px-4 py-3">
-                <h6 className="uppercase text-slate-200 text-xs font-semibold">Overview</h6>
-                <h2 className="text-white text-xl font-semibold">Sales Value</h2>
+                <h6 className="uppercase text-slate-200 text-xs font-semibold">
+                  Overview
+                </h6>
+                <h2 className="text-white text-xl font-semibold">
+                  Sales value
+                </h2>
               </div>
+
               <div className="p-4 flex-auto">
                 <div className="relative h-87.5">
                   <Line data={data} options={options} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Chart - Total Orders Bar Chart */}
-          <div className="xl:w-4/12 px-4">
-            <div className="relative flex flex-col min-w-0 bg-white w-full mb-6 shadow-lg rounded">
-              <div className="px-4 py-3">
-                <h6 className="uppercase mb-1 text-xs font-semibold primeColor">Performance</h6>
-                <h2 className="text-gray-200 text-xl font-medium">Total Orders</h2>
-              </div>
-              <div className="p-4 flex-auto">
-                <div className="relative h-87.5">
-                  <Bar
-                    data={{
-                      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-                      datasets: [
-                        {
-                          label: "2026",
-                          data: [30, 78, 56, 34, 100, 45, 13],
-                          backgroundColor: "#ed64a6",
-                          barThickness: 7,
-                        },
-                        {
-                          label: "2025",
-                          data: [27, 68, 86, 74, 10, 4, 87],
-                          backgroundColor: "#4c51bf",
-                          barThickness: 7,
-                        },
-                      ],
-                    }}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        legend: {
-                          position: "bottom",
-                          labels: { boxWidth: 20, color: "#64748b" },
-                        },
-                        tooltip: {
-                          backgroundColor: "#111827",
-                          titleColor: "#fff",
-                          bodyColor: "#fff",
-                          cornerRadius: 6,
-                          padding: 10,
-                        },
-                      },
-                      scales: {
-                        x: { grid: { display: false }, ticks: { color: "#64748b" } },
-                        y: {
-                          beginAtZero: true,
-                          max: 100,
-                          ticks: { stepSize: 10, color: "#64748b" },
-                          grid: { borderDash: [4, 4], color: "#e5e7eb" },
-                        },
-                      },
-                    }}
-                  />
                 </div>
               </div>
             </div>
