@@ -205,7 +205,7 @@ const Dashboard = () => {
 
       {/* CHART SECTION */}
       <div className="relative w-full">
-        <div className="absolute w-full -top-24 px-10 pb-20">
+        <div className="absolute w-full -top-24 px-10">
           {/* Chart Div */}
           <div className="w-full  flex flex-col xl:flex-row">
             {/* Left Chart - Sales Line Chart */}
@@ -303,9 +303,9 @@ const Dashboard = () => {
           </div>
 
           {/* BELOW CHART SECTION - TABLES */}
-          <div className="w-full mt-2 flex flex-col xl:flex-row">
+          <div className="w-full mt-2 mb-13 flex flex-col xl:flex-row">
             {/* Page Visits Table */}
-            <div className="bg-white xl:w-12/12 mx-4 shadow-2xl rounded-lg ">
+            <div className="bg-white xl:w-12/12 mx-4 shadow-md rounded-lg ">
               <div className="flex justify-between items-center p-4">
                 <h6 className="text-gray-700 font-semibold text-sm uppercase">
                   Page visits
@@ -331,7 +331,7 @@ const Dashboard = () => {
                       unique: "340",
                       bounce: "46,53%",
                       trend: "up",
-                      color: "text-green-500"
+                      color: "text-green-500",
                     },
                     {
                       page: "/argon/index.html",
@@ -339,7 +339,7 @@ const Dashboard = () => {
                       unique: "319",
                       bounce: "46,53%",
                       trend: "down",
-                      color: "text-orange-500"
+                      color: "text-orange-500",
                     },
                     {
                       page: "/argon/charts.html",
@@ -347,7 +347,7 @@ const Dashboard = () => {
                       unique: "294",
                       bounce: "36,49%",
                       trend: "down",
-                      color: "text-orange-500"
+                      color: "text-orange-500",
                     },
                     {
                       page: "/argon/tables.html",
@@ -355,7 +355,7 @@ const Dashboard = () => {
                       unique: "147",
                       bounce: "50,87%",
                       trend: "up",
-                      color: "text-green-500"
+                      color: "text-green-500",
                     },
                     {
                       page: "/argon/profile.html",
@@ -363,11 +363,13 @@ const Dashboard = () => {
                       unique: "190",
                       bounce: "46,53%",
                       trend: "down",
-                      color: "text-red-500"
+                      color: "text-red-500",
                     },
                   ].map((row, idx) => (
                     <tr key={idx} className="hover:bg-gray-50">
-                      <td className="px-4 py-3 text-gray-700 font-medium">{row.page}</td>
+                      <td className="px-4 py-3 text-gray-700 font-medium">
+                        {row.page}
+                      </td>
                       <td className="px-4 py-3 text-gray-700">
                         {row.visitors}
                       </td>
@@ -377,7 +379,7 @@ const Dashboard = () => {
                           // <FaArrowUp className="text-green-500 inline" />
                           <FaArrowUp className={`${row.color} inline`} />
                         ) : (
-                          <FaArrowDown className={`${row.color} inline`}/>
+                          <FaArrowDown className={`${row.color} inline`} />
                         )}
                         {row.bounce}
                       </td>
@@ -388,7 +390,7 @@ const Dashboard = () => {
             </div>
 
             {/* Social Traffic Table */}
-            <div className="bg-white xl:w-4/12 mx-4 shadow-2xl rounded-lg overflow-auto ">
+            <div className="bg-white xl:w-4/12 mx-4 shadow-lg rounded-lg overflow-auto ">
               <div className="flex justify-between items-center p-4">
                 <h6 className="text-gray-700 font-semibold text-sm uppercase">
                   Social traffic
@@ -451,7 +453,9 @@ const Dashboard = () => {
                         {row.visitors}
                       </td>
                       <td className="px-4 py-3">
-                        <div className={`${row.bcolor} rounded-full h-2 w-full`}>
+                        <div
+                          className={`${row.bcolor} rounded-full h-2 w-full`}
+                        >
                           <div
                             className={`${row.color} h-2 rounded-full`}
                             style={{ width: `${row.percent}%` }}
@@ -467,6 +471,42 @@ const Dashboard = () => {
               </table>
             </div>
           </div>
+
+          {/* Footer Part */}
+          <footer className="w-full border-t border-gray-200 pb-5 bg-white">
+            <div className="mx-auto px-6 pt-4 font-medium flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-gray-500">
+              {/* Left side */}
+              <p>Copyright © 2026 Creative Tim | Distributed by ThemeWagon</p>
+
+              {/* Right side */}
+              <nav className="flex gap-6">
+                <a
+                  href="#"
+                  className="hover:text-gray-800 font-medium transition"
+                >
+                  Creative Tim
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-gray-800 font-medium transition"
+                >
+                  About Us
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-gray-800 font-medium transition"
+                >
+                  Blog
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-gray-800 font-medium transition"
+                >
+                  MIT License
+                </a>
+              </nav>
+            </div>
+          </footer>
         </div>
       </div>
     </>
